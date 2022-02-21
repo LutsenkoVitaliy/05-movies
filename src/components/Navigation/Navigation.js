@@ -7,7 +7,7 @@ export default function Navigation () {
     <>
     <Nav>
       <Link to="/">Home</Link>
-      <Link to="movies">Movies</Link>
+      <Link to="/movies">Movies</Link>
     </Nav>
       <Outlet />
     </>
