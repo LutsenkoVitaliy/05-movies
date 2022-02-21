@@ -7,7 +7,7 @@ export default function ListMoviesTrending({films}) {
     <>
     <Title>Trending Films</Title>
     <ListTrendFilms>
-        {films.map((film) => (
+        {films.map(film => (
           <li key={film.id}>
             <ItemTrendFilms to={`movies/${film.id}`}>
               {film.original_title}

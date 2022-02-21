@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { fetchTrendingMovies } from '../services/theMoviedbAPI';
 import ListMoviesTrending from 'components/ListMoviesTrending';
 
-export default function HomePage() {
+const useFetchItem = () => {
   const [trendFilm, setTrendFilm] = useState([]);
   const [status, setStatus] = useState('idle');
   const [error, setError] = useState(null);
@@ -22,6 +22,13 @@ export default function HomePage() {
     }
     fetchListTrendMovies()
   }, []);
+
+  return { trendFilm, status, error }
+} 
+
+export default function HomePage() {
+  
+  const { trendFilm, status, error } = useFetchItem();
   
    if (status === 'idle') {
     return <></>
@@ -40,10 +47,5 @@ export default function HomePage() {
    
   
 }
-
-
-
-HomePage.propTypes = {}
-
 
 
