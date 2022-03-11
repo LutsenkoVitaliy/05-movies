@@ -26,7 +26,7 @@ const useFetchItem = () => {
   return { trendFilm, status, error }
 } 
 
-export default function HomePage() {
+export function HomePage() {
   
   const { trendFilm, status, error } = useFetchItem();
   

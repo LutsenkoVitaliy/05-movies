@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default function MovieDetailsPage(props) {
+export function MovieDetailsPage() {
   return (
     <div>MovieDetailsPage</div>
   )

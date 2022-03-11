@@ -1,13 +1,8 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import './App.css'
 import Navigation from "./components/Navigation/Navigation";
-
-import HomePage from "view/HomePage";
-import Cast from "view/Cast";
-import MoviesPage from "view/MoviesPage";
-import MovieDetailsPage from "view/MovieDetailsPage";
-import Reviews from "view/Reviews";
+import { Cast, HomePage, MovieDetailsPage, MoviesPage, Reviews } from './view';
 
 export default function App (){
   return (
@@ -15,12 +10,12 @@ export default function App (){
   <Routes>
     <Route path="/" element={<Navigation />}>
     <Route index element={<HomePage />} />
-      <Route path="movies" element={<MoviesPage/>}>
-        <Route path=":movieId" element={<MovieDetailsPage/>}>
-          <Route path="cast" element={<Cast/>}/>
-          <Route path="reviews" element={<Reviews />} />
-        </Route>
+    <Route path="movies" element={<MoviesPage/>}/>
+      <Route path="movies/:movieId" element={<MovieDetailsPage/>}>
+        <Route path="cast" element={<Cast/>}/>
+        <Route path="reviews" element={<Reviews />} />
       </Route>
+    <Route path="*" element={<Navigate to="/"/>}/>  
     </Route>
   </Routes> 
   </>
